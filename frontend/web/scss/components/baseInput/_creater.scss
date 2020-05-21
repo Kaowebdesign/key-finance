@@ -1,0 +1,11 @@
+@import "vars";
+@import "maker";
+
+.base-input{
+    @include SetConfig($base_input_config);
+    @include Create('padding',$base_input_padding,'padding');
+    @include Create('border',$base_input_border,'border-bottom');
+    &_textarea{
+        resize: none;
+    }
+}

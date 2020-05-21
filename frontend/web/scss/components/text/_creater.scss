@@ -1,0 +1,10 @@
+@import "vars";
+@import "maker";
+
+.text{
+    @include Create('color',$text_color,'color');
+    @include Create('font',$text_font_weight,'font-weight');
+    &_size{
+        @include CreateRangeAdditional($text_size_sm,$text_line_height_sm,'font-size','line-height');
+    }
+}

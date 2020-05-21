@@ -1,0 +1,17 @@
+@import "vars";
+@import "maker";
+
+.caption{
+    position: relative;
+    z-index: 1;
+    @include Create('margin',$caption_margin,'margin');
+    @include Create('color',$caption_color,'color');
+    @include SetExtensions($caption_extends);
+    &_second-font{
+        @extend %thirdFont;
+        @extend %boldFont;
+    }
+    &_size{
+        @include CreateRangeAdditional($caption_size_sm,$caption_line_height_sm,'font-size','line-height');
+    }
+}

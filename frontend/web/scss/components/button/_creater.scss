@@ -1,0 +1,29 @@
+@import "vars";
+@import "maker";
+
+.button{
+    @extend %nullLink;
+    @include Create('margin',$button_margin,'margin');
+    @include Create('padding',$button_padding,'padding');
+    @include SetConfig($button_config);
+    &:hover{
+        text-decoration: none;
+    }
+    &_type{
+        &_brown{
+            @include SetConfig($button_brown_config);
+            &:hover{
+                @include SetConfig($button_brown_hover_config);
+            }
+            &:active{
+                @include SetConfig($button_brown_active_config);
+            }
+        }
+        &_cream{
+            @include SetConfig($button_cream_config);
+            &:hover{
+                @include SetConfig($button_cream_hover_config);
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+$logo_extensions:baseFlex,alignCenter;
+$logo_config:(
+
+);
+$logo_img_config:(
+  max-width: 100%,
+  height:auto,
+  display:block
+);
+$logo_label_extensions: textUppercase;
+$logo_label_config:(
+  color:#000000,
+  padding:3px 10px 3px 18px,
+  margin-left:10px,
+  font-size: 12px,
+  line-height: 20px,
+  border-left: 1px solid rgba(0, 0, 0, 0.2)
+);

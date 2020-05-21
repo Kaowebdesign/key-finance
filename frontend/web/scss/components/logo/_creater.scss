@@ -1,0 +1,14 @@
+@import "vars";
+@import "maker";
+
+.logo{
+  @include SetConfig($logo_config);
+  @include SetExtensions($logo_extensions);
+  &__img{
+    @include SetConfig($logo_img_config);
+  }
+  &__label{
+    @include SetConfig($logo_label_config);
+    @include SetExtensions($logo_label_extensions);
+  }
+}

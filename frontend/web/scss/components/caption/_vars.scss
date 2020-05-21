@@ -1,0 +1,26 @@
+$caption_extends:secondFont,textCapitalize;
+$caption_size_sm:(
+  h1:(36rem / 14),
+  h2:(26rem / 14),
+  h3:(24rem / 14),
+  h4:(18rem / 14),
+  h5:(14rem / 14),
+  h6:(12rem / 14)
+);
+$caption_line_height_sm:(
+  h1:(42rem / 14),
+  h2:(34rem / 14),
+  h3:(32rem / 14),
+  h4:(24rem / 14),
+  h5:(20rem / 14),
+  h6:(18rem / 14)
+);
+$caption_margin:(
+    bottom_bg:0 0 80px,
+    bottom_lg:0 0 60px,
+    bottom:0 0 40px
+);
+$caption_color:(
+  white:#ffffff,
+  black:#000000
+)

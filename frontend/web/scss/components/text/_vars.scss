@@ -1,0 +1,24 @@
+$text_color:(
+    white:#ffffff,
+    black:#000000,
+    grey:rgba(0,0,0,.5)
+);
+$text_size_sm:(
+  ls:(12rem / 14),
+  lt:(14rem / 14),
+  sm:(16rem / 14),
+  md:(18rem / 14)
+
+);
+$text_line_height_sm:(
+  lt:(20rem / 14),
+  sm:(21rem / 14)
+);
+$text_font_weight:(
+    regular:400,
+    semibold:600,
+    bold:700
+);
+$text_font_decoration:(
+    under:underline
+);
