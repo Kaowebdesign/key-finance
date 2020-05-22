@@ -1,0 +1,117 @@
+.inline-scroll{
+    overflow-y: scroll;
+    -ms-overflow-style: none;  // IE 10+
+    scrollbar-width: none;  // Firefox
+    overflow-x:hidden;
+    &::-webkit-scrollbar {
+        display: none;
+        width: 0px;  /* Remove scrollbar space */
+        background: transparent;  /* Optional: just make scrollbar invisible */
+    }
+}
+
+%noneOutline{
+    &:active,
+    &:focus{
+        outline: none !important;
+    }
+    &::-moz-focus-inner {
+        border: 0 !important;
+    }
+}
+
+%nullLink {
+    text-decoration: none;
+    &:hover{
+        text-decoration: initial;
+    }
+}
+
+%nullList {
+    list-style: none;
+}
+
+%nullInputs {
+    outline: none;
+}
+
+%baseFlex {
+    display: flex;
+}
+
+%columnFlex {
+    flex-direction: column;
+}
+
+%flexFullCenter {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+%justifyCenter {
+    justify-content: center;
+}
+
+%alignCenter {
+    align-items: center;
+}
+
+%textCenter {
+    text-align: center;
+}
+
+%basePos {
+    position: relative;
+    z-index: 1;
+}
+
+%absolutePos {
+    position: absolute;
+}
+
+%marginCenter {
+    margin: 0 auto;
+}
+
+%baseTransition {
+    transition: .4s;
+}
+
+%fastTransition {
+    transition: .2s;
+}
+
+%fullAbsolute{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+%robotoBase{
+    font-family: 'Roboto', sans-serif;
+}
+%reegularFont{
+    font-weight: 400;
+}
+%boldFont{
+    font-weight: 700 !important;
+}
+
+%secondFont{
+    font-family: 'Kameron', serif;
+}
+
+%cursorPointer{
+    cursor: pointer;
+}
+
+%baseRadius {
+    border-radius: 4px;
+}
+
+.null-list {
+    @extend %nullList;
+}

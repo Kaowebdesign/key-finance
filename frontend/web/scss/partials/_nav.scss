@@ -1,0 +1,25 @@
+.nav{
+  padding: 20px 25px;
+  .navbar-brand{
+    max-width: 150px;
+    img{
+      max-width: 100%;
+    }
+  }
+  .nav-link{
+    @extend %baseFlex;
+    font-size: (18rem / 16);
+    color: $basicWhite;
+    &:hover{
+      opacity: .7;
+    }
+  }
+  .navbar-nav{
+    @extend %baseFlex;
+    @extend %alignCenter;
+    padding: 0;
+  }
+  &__container{
+    display: flex;
+  }
+}

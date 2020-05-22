@@ -1,0 +1,58 @@
+.wrap{
+  @extend %baseFlex;
+  @extend %columnFlex;
+  background-image: linear-gradient(to top left, rgb(18, 181, 235), rgb(17, 174, 222), rgb(17, 167, 209), rgb(16, 160, 196), rgb(16, 153, 183), rgb(15, 146, 170), rgb(15, 140, 156), rgb(14, 133, 143), rgb(14, 126, 130), rgb(13, 119, 117), rgb(13, 112, 104), rgb(12, 105, 91));
+}
+.main{
+
+}
+.layout{
+  @extend %baseFlex;
+  justify-content: flex-end;
+  flex-grow: 1;
+  width: 100%;
+  &__wrap{
+    width: calc(100% - 150px);
+    background: $basicWhite;
+    box-shadow: -8px -4px 20px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 6px 0px 0px 0px;
+    overflow: hidden;
+  }
+  &__header{
+    @extend %baseFlex;
+    justify-content: space-between;
+    background: #f1f1f1;
+    padding: 10px 25px;
+  }
+  &__caption{
+    font-size: (28rem / 16);
+    margin: 0;
+    color: $basicBlack;
+  }
+  &__body{
+    padding: 25px;
+  }
+  &__button{
+    @extend %nullLink;
+    @extend %baseTransition;
+    display: inline-block;
+    padding: 5px 30px;
+    color: $basicWhite;
+    font-size: (16rem / 16);
+    letter-spacing: 1.2px;
+    background:#0d7775;
+    text-transform: uppercase;
+    border-radius: 3px;
+    margin: 0 0 0 10px;
+    &_light{
+      background: #0c5460;
+      &:hover{
+        opacity: .9;
+      }
+    }
+    &:hover{
+      color: $basicWhite;
+      opacity: .9;
+    }
+  }
+}

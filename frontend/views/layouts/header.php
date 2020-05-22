@@ -4,14 +4,17 @@ use yii\bootstrap4\Nav;
 use yii\bootstrap4\NavBar;
 use yii\helpers\Html;
 ?>
-<header>
+<header class="header">
     <?php
         NavBar::begin([
-            'brandLabel' => Yii::$app->name,
-            'brandUrl' => Yii::$app->homeUrl,
+            'brandImage'=>'@web/img/key_logo.svg',
+            'brandUrl'=> Yii::$app->homeUrl,
             'options' => [
-                'class' => 'navbar navbar-expand-md navbar-light bg-dark',
+                'class' => 'nav navbar navbar-expand-md',
             ],
+            'innerContainerOptions'=>[
+                    'class'=>'nav__container'
+            ]
         ]);
         $menuItems = [
             ['label' => 'Главная', 'url' => ['/site/index']],
