@@ -128,3 +128,27 @@ body {
     .layout__button:hover {
       color: #ffffff;
       opacity: .9; }
+
+/*=== Hello you are in parent MAKER ===*/
+/* This you can use for create full Component with class name */
+/* This you should use for create some styles of your own component */
+.moneycard {
+  display: inline-block;
+  position: relative;
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 20px 30px 30px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden; }
+  .moneycard__caption {
+    font-size: 1.75rem; }
+  .moneycard__label {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    background: #34D1B2;
+    font-size: 0.8125rem;
+    text-align: center;
+    color: #ffffff; }

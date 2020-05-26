@@ -1,0 +1,26 @@
+@import "vars";
+@import "maker";
+
+.moneycard{
+  display: inline-block;
+  position: relative;
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 20px 30px 30px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  &__caption{
+    font-size: (28rem / 16);
+  }
+  &__label{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    background: $cBlueLightDuo;
+    font-size: (13rem / 16);
+    text-align: center;
+    color: #ffffff;
+  }
+}

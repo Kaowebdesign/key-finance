@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use app\components\Moneycard;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\IncomeSearch */
@@ -19,6 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
     <div class="layout__body">
+        <?= Moneycard::widget(['sum' => '1000']) ?>
         <p>
             <?= Html::a('Просмотреть все', ['all'], ['class' => 'btn btn-primary']) ?>
         </p>
