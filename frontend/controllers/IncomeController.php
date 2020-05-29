@@ -47,6 +47,7 @@ class IncomeController extends Controller
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
             'allIncomeSum' => $income->getAllIncomeSum(),
+            'categorySum' => $income->getSumOfCategory()
         ]);
     }
 

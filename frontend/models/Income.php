@@ -23,6 +23,7 @@ class Income extends \yii\db\ActiveRecord
      * {@inheritdoc}
      */
     public $allIncomeSum = 0;
+    public $sumCategory;
 
     public static function tableName()
     {
@@ -78,11 +79,22 @@ class Income extends \yii\db\ActiveRecord
         return $this->hasOne(CategoryIncome::className(), ['id' => 'category_id_inc']);
     }
 
+    public function getSumOfCategory()
+    {
+        return Income::find()
+                ->select(['SUM(sum)','category_id_inc','name'])
+                ->leftJoin('category_income','`category_income`.`id` = `income`.`category_id_inc`')
+                ->with('categoryIncome')->groupBy('category_id_inc')
+                ->asArray()
+                ->all();
+    }
+
     public function saveIncome()
     {
         $this->user_id=Yii::$app->user->id;
         return $this->save();
     }
+
     public function getAllIncomeSum()
     {
        return $this->allIncomeSum = Income::find()->sum('sum');

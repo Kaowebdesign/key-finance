@@ -7,6 +7,8 @@ use app\components\Moneycard;
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\IncomeSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
+/* @var $allIncomeSum app\models\Income */
+/* @var $categorySum app\models\Income */
 
 $this->title = 'Доходы';
 $this->params['breadcrumbs'][] = $this->title;
@@ -20,7 +22,8 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
     <div class="layout__body">
-        <?= Moneycard::widget(['sum' => '1000']) ?>
+        <?= Moneycard::widget(['sum' => $allIncomeSum]) ?>
+        <?= Moneycard::widget(['data' => $categorySum,'type'=>'array']) ?>
         <p>
             <?= Html::a('Просмотреть все', ['all'], ['class' => 'btn btn-primary']) ?>
         </p>
