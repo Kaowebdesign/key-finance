@@ -9,6 +9,17 @@
   padding: 20px 30px 30px;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  &_balance{
+    margin: 0 30px 0 0;
+    .moneycard__label{
+      background: #F93E58;
+    }
+  }
+  &_all-sum{
+    .moneycard__label{
+      background: #65B14D;
+    }
+  }
   &__caption{
     font-size: (28rem / 16);
   }

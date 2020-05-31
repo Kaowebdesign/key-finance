@@ -11,6 +11,7 @@ class Moneycard extends Widget
     public $category;
     public $currency;
     public $type;
+    public $userCssClass;
     public $data;
 
     public function init()
@@ -37,6 +38,10 @@ class Moneycard extends Widget
         {
             $this->currency = "грн";
         }
+        if($this->userCssClass === null)
+        {
+            $this->userCssClass = "moneycard_single";
+        }
         if($this->data === null)
         {
             $this->data = [];
@@ -49,7 +54,8 @@ class Moneycard extends Widget
             return $this->render('moneycard',[
                 'sum' => $this->sum,
                 'currency' => $this->currency,
-                'category' => $this->category
+                'category' => $this->category,
+                'userCssClass' => $this->userCssClass
             ]);
         }else{
             return $this->render('moneycard_array',[

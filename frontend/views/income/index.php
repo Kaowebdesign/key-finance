@@ -22,8 +22,18 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
     <div class="layout__body">
-        <?= Moneycard::widget(['sum' => $allIncomeSum]) ?>
-        <?= Moneycard::widget(['data' => $categorySum,'type'=>'array']) ?>
+        <div class="row">
+            <div class="col-4">
+                <?= Moneycard::widget(['sum' => '10 240','category'=>'Остаток','userCssClass' => 'moneycard_balance']) ?>
+                <?= Moneycard::widget(['sum' => $allIncomeSum,'userCssClass'=>'moneycard_all-sum']) ?>
+            </div>
+            <div class="col-8">
+                <div class="income-slider owl-carousel owl-theme">
+                    <?= Moneycard::widget(['data' => $categorySum,'type'=>'array']) ?>
+                </div>
+            </div>
+        </div>
+
         <p>
             <?= Html::a('Просмотреть все', ['all'], ['class' => 'btn btn-primary']) ?>
         </p>

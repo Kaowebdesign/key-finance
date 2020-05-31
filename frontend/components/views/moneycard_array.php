@@ -23,9 +23,9 @@ $this->registerJs('
 ',View::POS_READY,'moneycard_size');
 
 $this->registerCss("
-    .moneycard_item{
-        margin-left:30px;
-    }
+//    .moneycard_item{
+//        margin-left:30px;
+//    }
 ");
 ?>
 <?php foreach ($data as $item){ ?>
