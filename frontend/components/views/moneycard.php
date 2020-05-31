@@ -8,7 +8,7 @@ use app\components\Moneycard;
 /* @var $category app\components\Moneycard */
 
 ?>
-<div class="moneycard">
+<div class="moneycard moneycard_all">
     <h2 class="moneycard__caption mb-0"><?= $sum; ?> <?= $currency; ?></h2>
     <span class="moneycard__label mb-0"><?= $category; ?></span>
 </div>
