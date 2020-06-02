@@ -1,5 +1,53 @@
 .income-slider{
+  &__arrow{
+    position: absolute;
+    display: block;
+    width: 30px;
+    min-width: 30px;
+    height: 100%;
+    z-index: 1;
+    background: #ffffff;
+    transition: .5s;
+    &:hover{
+      opacity: .6;
+    }
+    &_prev{
+      padding-top: 20px;
+      left: -30px;
+      &::after{
+        content: "";
+        position: absolute;
+        display: block;
+        width: 30px;
+        min-width: 30px;
+        height: 40px;
+        background-image: url("../img/back.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        transform: translateX(-10px);
+      }
+    }
+    &_next{
+      padding-top: 20px;
+      right: 10px;
+      &::after{
+        content: "";
+        position: absolute;
+        display: block;
+        width: 30px;
+        min-width: 30px;
+        height: 40px;
+        background-image: url("../img/next.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+  }
   .owl-stage-outer{
     padding: 0 0 30px;
+  }
+  .owl-stage{
+    padding-left: 20px !important;
+    padding-right: 30px !important;
   }
 }
