@@ -13,12 +13,16 @@ use app\components\Moneycard;
 $this->title = 'Доходы';
 $this->params['breadcrumbs'][] = $this->title;
 
+//google charts library registration
+$this->registerJsFile('https://www.gstatic.com/charts/loader.js', ['position' => yii\web\View::POS_HEAD],$key = null);
+//get income info
 $incomeCategorySum = json_encode($categorySum,JSON_UNESCAPED_UNICODE);
-
 $js = <<< JS
-   var incomeCtx = document.getElementById('incomeChart').getContext('2d');
-
-    var incomeCategorySum = $incomeCategorySum;
+   
+JS;
+//google charts settings
+$gChartsSettings = <<< JS
+     var incomeCategorySum = $incomeCategorySum;
     
     var incomeSum = incomeCategorySum.map(function(item) {
       return item['SUM(sum)'];
@@ -28,21 +32,37 @@ $js = <<< JS
       return item['name'];
     });
     
-    console.log(incomeSum);
+    google.charts.load('current', {packages: ['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
     
-    var myDoughnutChart = new Chart(incomeCtx, {
-        type: 'doughnut',
-        data: {
-            datasets: [{
-                backgroundColor: ['#5ED1BA','#00A383','#006A55'],
-                data: incomeSum
-            }],
-            // These labels appear in the legend and in the tooltips when hovering different arcs
-            labels: incomeLabel
+    
+    
+    function drawChart() {
+        var data = new google.visualization.DataTable();
+        
+        data.addRows(incomeSum.length);
+        
+        data.addColumn('string', 'Категория');
+        data.addColumn('number', 'Сумма');
+        
+        for(var i = 0; i < incomeLabel.length; i++){
+             data.setCell(i, 0, incomeLabel[i]);
         }
-    });
+         
+        for(var i = 0; i < incomeSum.length; i++){
+             data.setCell(i, 1, incomeSum[i]);
+        }
+        var options = {
+          title: 'График месячных доходов',
+          pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('income-chart'));
+        chart.draw(data, options);
+    }
 JS;
 
+$this->registerJs( $gChartsSettings, $position = yii\web\View::POS_END, $key = null );
 $this->registerJs( $js, $position = yii\web\View::POS_END, $key = null );
 ?>
 
@@ -69,8 +89,8 @@ $this->registerJs( $js, $position = yii\web\View::POS_END, $key = null );
             </div>
         </div>
         <div class="row">
-            <div class="col-6">
-                <canvas id="incomeChart"></canvas>
+            <div class="col-6 d-flex align-items-center">
+                <div id="income-chart" style="width: 100%; height: 500px;"></div>
             </div>
             <div class="col-6">
                 <?php  //echo $this->render('_search', ['model' => $searchModel]); ?>
