@@ -161,7 +161,6 @@ body {
     color: #ffffff; }
 
 .income-slider__arrow {
-  position: absolute;
   display: block;
   width: 30px;
   min-width: 30px;
@@ -205,6 +204,5 @@ body {
 .income-slider .owl-stage-outer {
   padding: 0 0 30px; }
 
-.income-slider .owl-stage {
-  padding-left: 20px !important;
-  padding-right: 30px !important; }
+.income-chart svg text {
+  font-family: 'Open Sans', sans-serif; }

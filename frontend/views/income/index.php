@@ -53,8 +53,12 @@ $gChartsSettings = <<< JS
              data.setCell(i, 1, incomeSum[i]);
         }
         var options = {
-          title: 'График месячных доходов',
           pieHole: 0.4,
+          chartArea:{
+              top:0,
+              left:0
+          },
+          colors: ['#5ED1BA', '#6A94D4', '#FFCB73', '#FFAA73', '#1F7A68',,'#284B7E','#BF8A30','#BF6830']
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('income-chart'));
@@ -80,17 +84,22 @@ $this->registerJs( $js, $position = yii\web\View::POS_END, $key = null );
                 <?= Moneycard::widget(['sum' => '10 240','category'=>'Остаток','userCssClass' => 'moneycard_balance']) ?>
                 <?= Moneycard::widget(['sum' => $allIncomeSum,'userCssClass'=>'moneycard_all-sum']) ?>
             </div>
-            <div class="col-8 d-flex pl-0">
-                <?= Html::a('', ['/#'], ['class' => 'income-slider__arrow income-slider__arrow_prev']) ?>
-                <div class="income-slider owl-carousel owl-theme">
-                    <?= Moneycard::widget(['data' => $categorySum,'type'=>'array']) ?>
+            <div class="col-8 d-flex px-0">
+                <div class="row w-100 justify-content-end">
+                        <?= Html::a('', ['/#'], ['class' => 'income-slider__arrow income-slider__arrow_prev']) ?>
+                    <div class="col-10">
+                        <div class="income-slider owl-carousel owl-theme">
+                            <?= Moneycard::widget(['data' => $categorySum,'type'=>'array']) ?>
+                        </div>
+                    </div>
+                        <?= Html::a('', ['/#'], ['class' => 'income-slider__arrow income-slider__arrow_next']) ?>
                 </div>
-                <?= Html::a('', ['/#'], ['class' => 'income-slider__arrow income-slider__arrow_next']) ?>
             </div>
         </div>
         <div class="row">
-            <div class="col-6 d-flex align-items-center">
-                <div id="income-chart" style="width: 100%; height: 500px;"></div>
+            <div class="col-6 d-flex flex-column">
+                <h3 class="caption caption_size_h3 mb-5">График месячного дохода</h3>
+                <div id="income-chart" style="width: 100%; height: 500px;" class="income-chart"></div>
             </div>
             <div class="col-6">
                 <?php  //echo $this->render('_search', ['model' => $searchModel]); ?>

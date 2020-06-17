@@ -10,7 +10,8 @@ $(document).ready(function(){
             dots:false,
             items:4,
             margin:30,
-            stagePadding: 25
+            stagePadding: 10,
+            responsiveClass:true
         });
     }
     //next button for income card carousel
